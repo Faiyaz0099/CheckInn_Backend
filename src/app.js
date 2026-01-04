@@ -18,10 +18,8 @@ dotenv.config();
 const app = express();
 
 
-app.use(cors({
-  origin: ["http://localhost:3000"],
-  credentials: true
-}));
+const API = import.meta.env.VITE_API_URL;
+fetch(`${API}/api/auth/login`);
 
 
 // Body parser middleware
